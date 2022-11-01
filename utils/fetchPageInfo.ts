@@ -1,11 +1,11 @@
-import { Project } from "../typings"
+import { PageInfo } from "../typings"
 
-export const fetchProjects = async() => {
-    const res = await fetch (`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`)
+export const fetchPageInfo = async() => {
+    const res = await fetch (`${process.env.NEXT_PUBLIC_BASE_URL}/api/getPageInfo`)
 
-    const data = await res.json()
-    const projects: Project[] = data.projects
+    const data = await res.json();
+    const pageInfo: PageInfo[] = data.pageInfo
 
-    return projects
+    return pageInfo
 }
 

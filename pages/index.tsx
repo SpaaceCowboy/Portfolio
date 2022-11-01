@@ -1,15 +1,21 @@
-  import type { NextPage } from 'next'
+  import type { GetStaticProps } from 'next'
   import Head from 'next/head'
-  import Header from "../components/Header"
-  import Hero from "../components/Hero"
-  import About from "../components/About"
-  import Experience from "../components/Experience"
-  import Skills from "../components/Skills"
-  import Projects from "../components/Projects"
-  import ContactMe from "../components/ContactMe"
+  import {About, Header, Hero, WorkExperience, Skills, Projects, ContactMe } from "../components/Links"
   import { useEffect, useState } from 'react'
+  import { Experience, PageInfo, Project, Skill, Social } from "../typings" 
+  import { fetchPageInfo, fetchExperiences, fetchProjects, fetchSkills, fetchSocial} from "../utils/Links"
 
-  const Home: NextPage = () => {
+
+  type Props = {
+    pageInfo: PageInfo
+    experiences: Experience[]
+    skills: Skill[]
+    projects: Project[]
+    socials: Social[ ]
+
+  }
+
+  const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
     const [domLoaded, setDomLoaded] = useState(false)
 
     useEffect(() => {
@@ -25,7 +31,7 @@
           <title>Portfolio</title>
         </Head>
 
-        <Header />
+        <Header socials={socials} />
 
         <section id='hero' className='snap-start'>
           <Hero />
@@ -36,7 +42,7 @@
         </section>
 
         <section id='experience' className='snap-center'>
-          <Experience />
+          <WorkExperience />
         </section>
 
         <section id='skills' className='snap-start'>
@@ -70,4 +76,24 @@
 
   export default Home
 
-  export 
+  export const getStaticProps: GetStaticProps<Props> = async () => {
+    const pageInfo: PageInfo = await fetchPageInfo();
+    const experiences: Experience[] = await fetchExperiences();
+    const skills: Skill[] = await fetchSkills();
+    const projects: Project[] = await fetchProjects();
+    const socials: Social[] = await fetchSocial();
+
+    return {
+      props: {
+        pageInfo,
+        experiences,
+        skills,
+        projects,
+        socials,
+      },
+      // Next.js will attempt to re-generate the page:
+      // -when a request comes in
+      // - at most once every 10 seconds
+      revalidate: 10,
+    }
+  }
