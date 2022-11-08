@@ -1,4 +1,4 @@
-  import type { GetStaticProps } from 'next'
+  import type { GetServerSideProps } from 'next'
   import Head from 'next/head'
   import Image from 'next/image'
   import {About, Header, Hero, WorkExperience, Skills, Projects, ContactMe } from "../components/Links"
@@ -74,7 +74,7 @@
 
   export default Home
 
-  export const getStaticProps: GetStaticProps<Props> = async () => {
+  export const getStaticProps: GetServerSideProps<Props> = async () => {
     const pageInfo: PageInfo = await fetchPageInfo();
     const experiences: Experience[] = await fetchExperiences();
     const skills: Skill[] = await fetchSkills();
