@@ -26,7 +26,7 @@ export interface PageInfo extends SanityBody {
 }
 
 export interface Technology extends SanityBody {
-    _type: "skills"
+    _type: "skill"
     image: Image
     progress: number
     title: string 
@@ -47,14 +47,14 @@ export interface Experience extends SanityBody {
     dateEnded: date 
     isCurrentlyWorkingHere: boolean 
     jobTitle: string 
-    points: string
+    points: string[]
     technologies: Technology[]
 }
 
 export interface Project extends SanityBody {
     title: string 
     _type: "project"
-    image: Image 
+    image: image 
     linkToBuild: string 
     summary: string 
     technologies: Technology[]
@@ -65,3 +65,4 @@ export interface Social extends SanityBody {
     title: string;
     url: string;
 }
+

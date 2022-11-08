@@ -3,8 +3,10 @@ import {groq } from "next-sanity"
 import { sanityClient } from "../../sanity";
 import {Project} from "../../typings"
 
+
+
 const query = groq`
-    *[_type == "skill"] {
+    *[_type == "project"] {
         ...,
         technologies[]->
     }

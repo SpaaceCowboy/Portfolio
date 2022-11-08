@@ -36,17 +36,6 @@ function Header({socials}: Props) {
             bgColor="transparent" 
             /> 
             ))}
-
-            <SocialIcon 
-            url="https://twitter.com" 
-            fgColor="gray" 
-            bgColor="transparent" 
-            />
-            <SocialIcon 
-            url="https://twitter.com" 
-            fgColor="gray" 
-            bgColor="transparent" 
-            />          
         </motion.div>
         <a href="#contactme">
         <motion.div

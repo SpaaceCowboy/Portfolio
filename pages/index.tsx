@@ -1,5 +1,6 @@
   import type { GetStaticProps } from 'next'
   import Head from 'next/head'
+  import Image from 'next/image'
   import {About, Header, Hero, WorkExperience, Skills, Projects, ContactMe } from "../components/Links"
   import { useEffect, useState } from 'react'
   import { Experience, PageInfo, Project, Skill, Social } from "../typings" 
@@ -34,23 +35,19 @@
         <Header socials={socials} />
 
         <section id='hero' className='snap-start'>
-          <Hero />
+          <Hero pageInfo={pageInfo} />
         </section>
 
         <section id='about' className='snap-center'>
-          <About />
-        </section>
-
-        <section id='experience' className='snap-center'>
-          <WorkExperience />
-        </section>
-
-        <section id='skills' className='snap-start'>
-          <Skills />
+          <About pageInfo={pageInfo} />
         </section>
 
         <section id='projects' className='snap-start'>
-          <Projects />
+          <Projects projects={projects} />
+        </section>
+
+        <section id='skills' className='snap-start'>
+          <Skills/>
         </section>
 
         <section id='contactme' className='snap-start'>
