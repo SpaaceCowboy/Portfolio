@@ -3,6 +3,7 @@ import React from 'react'
 import { Cursor, useTypewriter } from "react-simple-typewriter"
 import BackgroundCircles from "./BackgroundCircles"
 import { PageInfo } from '../typings'
+import Image from 'next/image'
 
 /* React-simple-typewriter */
 
@@ -24,10 +25,13 @@ function Hero({pageInfo}: Props) {
     return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles />
-        <img 
-        className='relative rounded-full h-32 w-32 mx-auto object-cover' 
-        src="/shayan.jpeg" alt="" 
-        />
+        <div className='relative h-32 w-32 mx-auto object-cover '>
+           <Image 
+           src="/shayan.jpeg" 
+           className='rounded-full'
+           alt=""
+           layout='fill' /> 
+        </div>
         <div className='z-20'>
             <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
                 {pageInfo?.role}

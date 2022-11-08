@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from "framer-motion"
 import { Project } from '../typings'
 import { urlFor } from '../sanity'
+import Image from 'next/image'
 
 
 type Props = {
@@ -51,12 +52,12 @@ function Projects({ projects }: Props) {
                      </h4>  
 
                      <div className='flex items-center space-x-2 justify-centere'>
-                        
-                            <img
-                            className='h-10' w-10
-                             src='' 
-                             alt="" />
-                        
+                        <div className='relative h-10 w-10'>
+                          <Image
+                          src=""
+                          alt=""
+                          layout="fill" />
+                        </div>
                      </div>
           
 
