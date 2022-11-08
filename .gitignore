@@ -12,7 +12,7 @@
 /.next/
 /out/
 
-portfolio/node_modules
+/portfolio/node_modules
 
 # production
 /build
