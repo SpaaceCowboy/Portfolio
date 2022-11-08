@@ -9,7 +9,7 @@ type Props = {
 
 function Skill({ directionLeft }: Props) {
   return (
-    <section className='grid grid-cols-4 gap-5'>
+    <section className='grid grid-cols-4 gap-5  '>
     {myskill.map((myskill) => (
     <div className='relative flex cursor-pointer'>
         <motion.img 
