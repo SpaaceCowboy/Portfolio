@@ -11,7 +11,7 @@ function Skill({ directionLeft }: Props) {
   return (
     <section className='grid grid-cols-4 gap-5  '>
     {myskill.map((myskill) => (
-    <div className='relative flex cursor-pointer'>
+    <div key={myskill.id} className='relative flex cursor-pointer'>
         <motion.img 
         initial= {{
             x: directionLeft ? -200 : 200,
