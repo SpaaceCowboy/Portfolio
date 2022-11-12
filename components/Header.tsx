@@ -28,14 +28,13 @@ function Header({socials}: Props) {
         }}
         className="flex flex-row item-center">
             {/* Social Icons */}
-            {socials.map((social) => (
+          
             <SocialIcon 
-            key={social._id}
-            url={social.url} 
+            
+             
             fgColor="gray" 
             bgColor="transparent" 
             /> 
-            ))}
         </motion.div>
         <a href="#contactme">
         <motion.div

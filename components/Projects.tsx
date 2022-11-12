@@ -3,16 +3,15 @@ import { motion } from "framer-motion"
 import { Project } from '../typings'
 import { urlFor } from '../sanity'
 import Image from 'next/image'
+import {projects} from "../constants"
 
 
-type Props = {
-    projects: Project[],
-     
+type Props = {     
 }
 
 
 
-function Projects({ projects }: Props) {
+function Projects({ }: Props) {
     
   return (
     <motion.div
@@ -25,7 +24,7 @@ function Projects({ projects }: Props) {
         className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'
         >Projects
         </h3>
-
+        
         <div className='relative w-full flex overflow-x-scroll overflow-y-hidden 
         snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20  scrollbar-thumb-[#F7AB0A]'>
             
@@ -41,8 +40,7 @@ function Projects({ projects }: Props) {
                     src=''
                      alt="" 
                     />
-                    
-
+                  
                     <div className='space-y-10 px-0 md:px-10 max-w-6xl'>
                      <h4 className='text-4xl font-semibold text-center '> 
                         <span className="underline decoration-[#F7AB0A]">
